@@ -1,15 +1,16 @@
-roll <- function(die, size, replace){
-
+roll <- function(die = 1:6, size = 2, replace = T){
+    sample(die, size, replace)
 }
 
 yahtzeeRoll <- function(){
-
+  roll(1:6,5)
 }
 
-sumRoll <- function(roll, value){
 
+sumRoll <- function(yahtzeeRoll, value){
+    sum(yahtzeeRoll == value)
 }
 
-isYahtzee(roll){
-
+isYahtzee <- function(roll){
+  roll[1] == roll[2] && roll[2] == roll[3] && roll[3] == roll[4] && roll[4] == roll[5] 
 }
